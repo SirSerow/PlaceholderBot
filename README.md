@@ -69,28 +69,10 @@ This will create a Docker image named **placeholder-bot** using the instructions
 
 #### 2.2 Run the Container
 
-Run the image in a container, passing the bot token via environment variable or `.env` file.
+Run docker compose to start the container:
 
-**Option A: Pass token on the command line**:
 ```
-docker run -d \
-   --name my_placeholder_bot \
-   -e TELEGRAM_TOKEN=1234567890:YOUR_BOT_TOKEN_HERE \
-    -e NEW_BOT_NAME=YourNewBotName \
-   placeholder-bot
-```
-
-**Option B: Use `.env`**:
-```
-docker run -d \
-   --name my_placeholder_bot \
-   --env-file .env \
-   placeholder-bot
-```
-
-The bot will run in the background. Check logs to verify it’s running:
-```
-docker logs my_placeholder_bot
+docker compose up --build -d
 ```
 
 ## Contributing
